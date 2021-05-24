@@ -1,0 +1,26 @@
+<!-- Start Intro Section -->
+{{> intro-blog}}
+<!-- End Intro Section -->
+<!-- Start Blog Section -->
+<section id="blog">
+    <div class="container">
+        <div><a href="/blogs">Back to Blogs List</a></div>
+        <h1 class="section-title wow fadeIn" data-wow-delay=".2s"><span>Subject:</span> {{blog.subject}}</h1>
+        <div class="row">
+            <div class="col-md-8" style="text-align: justify;line-height:27px;">
+                <p>{{blog.content}}</p>
+                <p>{{blog.contentFull}}</p>
+                <p style="display:block;text-align:end;font-weight:bold;">
+                    <span>Publish Date: </span>
+                    <span style="color:#0CAFA0;">{{blog.date}}</span>
+                </p>
+            </div>
+            <div class="col-md-4" style="text-align:center;">
+                {{#each blog.images}}
+                <img src="{{this}}" alt="{{this.title}}" style="margin-top:10px;">
+                {{/each}}
+            </div>
+        </div>
+    </div>
+</section>
+<!-- End Blog Section -->

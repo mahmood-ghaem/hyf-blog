@@ -1,0 +1,46 @@
+<!-- Start Intro Section -->
+{{> intro}}
+<!-- End Intro Section -->
+<!-- Start Blog Section -->
+<section id="blog">
+    <div class="container">
+        <h1 class="section-title wow fadeIn" data-wow-delay=".2s"><span>Latest</span> {{pageTitle}}</h1>
+        <div class="row">
+            <div id="blog-slider" class="owl-carousel owl-theme">
+                {{#each blogs}}
+                <div class="item wow fadeInUp fadeIn" data-wow-delay="0.4s">
+                    <div class="blog-wrapper">
+                        <div id="gallery{{@index}}" class="carousel slide" data-ride="carousel">
+                            <div class="carousel-inner">
+                                {{#each this.images}}
+                                {{#if @first}}
+                                <div class="item active">
+                                    {{else}}
+                                    <div class="item">
+                                        {{/if}}
+                                        <img src="{{this}}" alt="{{this.title}}">
+                                    </div>
+                                    {{/each}}
+                                </div>
+                                <a class="left carousel-control" href="#gallery{{@index}}" data-slide="prev"><i class="fa fa-chevron-left"></i></a>
+                                <a class="right carousel-control" href="#gallery{{@index}}" data-slide="next"><i class="fa fa-chevron-right"></i></a>
+                            </div>
+                            <div class="content">
+                                <h3>{{this.title}}</h3>
+                                <p>{{truncate this.content 200 "..."}}</p>
+                                <a href="/blog/{{this.id}}" class="redmore">Read More +</a>
+                            </div>
+                            <div class="blog-footer">
+                                <p>published: {{this.date}}</p>
+                            </div>
+                        </div>
+                    </div>
+                    {{/each}}
+                </div>
+            </div>
+        </div>
+</section>
+<!-- End Blog Section -->
+<!-- Start Connected Section -->
+{{> connected}}
+<!-- End Connected Section -->

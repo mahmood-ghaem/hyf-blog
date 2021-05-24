@@ -1,0 +1,31 @@
+<!-- Start Intro Section -->
+{{> intro-blog}}
+<!-- End Intro Section -->
+<!-- Start Blog Section -->
+<section id="blog">
+    <div class="container">
+        <h1 class="section-title wow fadeIn" data-wow-delay=".2s"><span>All</span> {{pageTitle}}</h1>
+        <div class="row">
+            {{#each blogs}}
+            <div style="border:1px solid #ccc;padding:10px;margin:10px 0px;background-color:#f2f2f2;">
+                <div style="display:flex;justify-content:space-between;flex-wrap:wrap;margin:10px 20px;">
+                    {{#each this.images}}
+                        <img src="{{this}}" alt="{{this.title}}">
+                    {{/each}}
+                </div>
+                <div>
+                    <h3 style="padding:20px">{{this.title}}</h3>
+                    <p style="text-align:justify;margin:10px 40px;">{{this.content}}</p>
+                    <span style="display:block; text-align:end;">
+                        <a href="/blog/{{this.id}}" class="redmore">Read More +</a>
+                    </span>
+                </div>
+                <div class="blog-footer" style="text-align:center;">
+                    <p>published: {{this.date}}</p>
+                </div>
+            </div>
+            {{/each}}
+        </div>
+    </div>
+</section>
+<!-- End Blog Section -->
